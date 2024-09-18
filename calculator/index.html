@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="calc-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calc">
+            <div class="display">
+                <input type="text" id="display">
+            </div>            
+            <div >
+                <button onclick="clearDisplay()" class="operation-btn">AC</button>
+                <button onclick="deleteLast()" class="operation-btn">DE</button>
+                <button onclick="appendOperator('%')" class="operation-btn">%</button>
+                <button onclick="appendOperator('/')" class="operation-btn">/</button>
+            </div>
+            <div>
+                <button onclick="appendNumbers('7')">7</button>
+                <button onclick="appendNumbers('8')">8</button>
+                <button onclick="appendNumbers('9')">9</button>
+                <button onclick="appendOperator('*')" class="operation-btn">*</button>
+            </div>
+            <div>
+                <button onclick="appendNumbers('4')">4</button>
+                <button onclick="appendNumbers('5')">5</button>
+                <button onclick="appendNumbers('6')">6</button>
+                <button onclick="appendOperator('-')" class="operation-btn">-</button>
+            </div>
+            <div>
+                <button onclick="appendNumbers('1')">1</button>
+                <button onclick="appendNumbers('2')">2</button>
+                <button onclick="appendNumbers('3')">3</button>
+                <button onclick="appendOperator('+')" class="operation-btn">+</button>
+            </div>
+            <div>
+                <button onclick="appendNumbers('00')">00</button>
+                <button onclick="appendNumbers('0')">0</button>
+                <button onclick="appendNumbers('.')" class="operation-btn">.</button>
+                <button onclick= "calculate()" class="operation-btn">=</button>
+            </div>
+        </div>
+        
+    </div> 
+        
+    <script src="calc.js"></script>
+</body>
+</html>
