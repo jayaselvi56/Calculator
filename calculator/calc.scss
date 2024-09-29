@@ -1,0 +1,130 @@
+$font-family:sans-serif;
+$padding:10px;
+$br-r:20px;
+$primary-color:white;
+$secondary-color:#2222d3d5;
+$body-bg:#dbcccccc;
+$bg-linear-clr:linear-gradient(90deg,#74aee777,#94f3b455,#76aadf77);
+ 
+
+@mixin inputs ($w:100px,$h:50px,$mb:10px,$font-ip:15px) {
+    font-size: $font-ip;
+    text-align: right;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    width: $w;
+    height: $h;
+    outline: 0;
+    margin-bottom: $mb;
+    
+}
+@mixin buttons ($w:50px,$h:50px,$br-r:10px,$bg-color:#dbb7b7d2,$m:8px,$fontsize:20px) { 
+    border: 0;
+    width: $w;
+    height: $h;
+    border-radius: $br-r;
+    box-shadow: -8px -8px 15px #ffffff1a, 5px 5px 15px #00000033;
+    background-color: $bg-color;
+    color: #000000;
+    font-size: $fontsize;
+    cursor: pointer;
+    margin: $m;
+    
+}
+
+body{
+    background: $body-bg;
+    font-family: $font-family;
+
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+
+        .calc{
+            padding: $padding;
+            border-radius: $br-r;
+            background: $bg-linear-clr;
+            .display{
+                @include inputs(280px,50px,5px,50px)
+            }
+          
+            div{
+                button {
+                    @include buttons(50px,50px,30px,#bbbbbb33,15px,20px)
+                }
+                .operation-btn{
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                }
+            }
+         
+                
+            
+
+        }
+    }
+}
+
+//media query
+
+@media (min-width:300px) and  (max-width:600px) {
+    body{
+        $padding:5px;
+        $font-size:13px;
+
+        .container{
+          
+            .calc{
+                padding: $padding;
+                background: $bg-linear-clr;
+                .display{
+                    @include inputs(220px,50px,5px,30px)
+                }
+              
+                div{
+                    button {
+                        font-size: $font-size;
+                        @include buttons(40px,40px,30px,#bbbbbb33,10px,14px)
+                    }
+                   
+                }
+             
+                    
+                
+    
+            }
+        }
+        
+    }
+}
+
+@media (min-width:600px) and  (max-width:1330px) {
+    body{
+        $padding:8px;
+        $font-size:15px;
+
+        .container{
+          
+            .calc{
+                padding: $padding;
+                background: $bg-linear-clr;
+                .display{
+                   
+                    @include inputs(290px,50px,8px,30px);
+                }
+              
+    
+            }
+        }
+        
+    }
+}
